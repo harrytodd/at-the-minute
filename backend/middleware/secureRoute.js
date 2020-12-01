@@ -6,7 +6,6 @@ function secureRoute(req, res, next) {
   const authToken = req.headers.authorization
 
   if (!authToken || !authToken.startsWith('Bearer')) {
-    console.log('Unauthorized 1')
     return res.status(401).send({ message: 'Unauthorized 1' })
   }
   const token = authToken.replace('Bearer ', '')
