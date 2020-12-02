@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const User = require('./models/userModel')
+require('dotenv').config()
 
 mongoose.connect(
   'mongodb://localhost/atmdb',
@@ -10,11 +11,11 @@ mongoose.connect(
     mongoose.connection.db.dropDatabase()
       .then(() => {
         return User.create([
-          { username: 'harry', email: 'harrytodd1997@gmail.com', password: 'Gigi123!', passwordConfirmation: 'Gigi123!' },
-          { username: 'alexia', email: '11aread1999@gmail.com', password: 'Gigi123!', passwordConfirmation: 'Gigi123!' }
+          { username: 'harry', email: 'harrytodd1997@gmail.com', password: `${process.env.PASSWORD}`, passwordConfirmation: `${process.env.PASSWORD}` },
+          { username: 'alexia', email: '11aread1999@gmail.com', password: `${process.env.PASSWORD}`, passwordConfirmation: `${process.env.PASSWORD}` }
         ])
       })
-      .then(users => console.log(`${users.length} users have been created.`))
+      .then(users => console.log(`${users.length} users have been created`))
       .catch(err => console.log(err))
       .finally(() => {
         console.log('Seeding complete')

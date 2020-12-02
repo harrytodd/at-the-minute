@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;400;500;600;700;800;900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +9,7 @@
 body {
   height: 100vh;
   display: flex;
+  font-family: 'Sansita Swashed', cursive;
 }
 
 a,
@@ -15,9 +18,19 @@ a:focus {
   outline: none;
 }
 
-.flex-center {
-  display: flex;
+main {
   align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
   flex-direction: row;
 }
 
@@ -25,31 +38,27 @@ a:focus {
 
 .navbar {
   width: 100vw;
-  height: 10%;
-  background-color: #e8c4da;
-  justify-content: space-between;
+  height: 25%;
+  background-color: white;
   border-bottom: 5px solid #fc7979;
+  align-items: center;
 }
 
 .logo-box {
-  font-family: 'Sansita Swashed', cursive;
-  margin-left: 5%;
-  margin-bottom: 0.5%;
-  font-size: 40px;
-  font-weight: 900;
+  margin-top: 1.5%;
+  font-size: 120px;
 }
 
 .nav-list {
-  margin-right: 5%;
   list-style-type: none;
   width: 50%;
+  text-align: center;
+  margin-top: 1%;
 }
 
 .nav-item {
-  font-family: 'Sansita Swashed', cursive;
   text-decoration: none;
-  margin-left: 10%;
-  padding: 0 0.5%;
+  margin: 5%;
   color: black;
   font-size: 20px;
 }
@@ -64,3 +73,39 @@ a:focus {
     background-size: 100% 88%;
   }
 }
+
+// ********** ABOUT **********
+
+.about {
+  height: 50vh;
+  background-color: #ffafaf;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 5px solid #fc7979;
+}
+
+.about-box {
+  height: 75%;
+  width: 25%;
+  background-color: white;
+  margin: 3%;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #b65656;
+}
+
+.about-title {
+  width: 50%;
+  font-size: 30px;
+  text-align: center;
+  border-bottom: 2px solid #fc7979;
+  padding: 2%;
+  margin-top: 5%;
+}
+
+.about-text {
+  width: 70%;
+  margin-top: 10%;
+  text-align: center;
+}
+
